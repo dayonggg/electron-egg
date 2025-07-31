@@ -7,7 +7,15 @@ export default defineConfig((mode) => {
   return {
     // Project plugins
     plugins: [
-      vue(),
+      vue({
+        template: {
+          compilerOptions: {
+            isCustomElement: tag => {
+              return tag === 'webview'
+            }
+          }
+        }
+      }),
       viteCompression({
         verbose: true,
         disable: false,
@@ -22,16 +30,6 @@ export default defineConfig((mode) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
-      },
-    },
-    css: {
-      preprocessorOptions: {
-        less: {
-          modifyVars: {
-            '@border-color-base': '#dce3e8',
-          },
-          javascriptEnabled: true,
-        },
       },
     },
     build: {

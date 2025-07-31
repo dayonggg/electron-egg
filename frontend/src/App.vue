@@ -1,5 +1,5 @@
 <template>
-    <router-view/>
+    <div>is work.</div>
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue';
@@ -9,6 +9,6 @@ onMounted(() => {
   if (loadingElement) {
     (loadingElement as HTMLElement).remove();
   }
-});
+})
 </script>
-<style lang="less"></style>
+<style></style>
