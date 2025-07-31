@@ -1,0 +1,58 @@
+{
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "explorer.openEditors.visible": 1,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "numso.prettier-standard-vscode",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "prettier.requireConfig": true,
+  "workbench.sideBar.location": "left",
+  "[typescript]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[json5]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[vue]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "never"
+    },
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "typescript.tsc.autoDetect": "off",
+  "json.schemas": [
+    {
+      "fileMatch": ["/*electron-builder.json5", "/*electron-builder.json"],
+      "url": "https://json.schemastore.org/electron-builder"
+    }
+  ],
+  "files.exclude": {
+    "**/dist": true,
+    "**/dist-electron": true,
+    "**/libs": true,
+    "**/release": true,
+    "**/package-lock.json": true,
+    "**/LICENSE": true
+  }
+}

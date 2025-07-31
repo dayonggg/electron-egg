@@ -1,9 +1,9 @@
-import { type AppConfig } from 'ee-core/config';
+import { type AppConfig } from 'ee-core/config'
 
 const config: () => AppConfig = () => {
   return {
-    openDevTools: false,
-  };
-};
+    openDevTools: false
+  }
+}
 
-export default config;
+export default config

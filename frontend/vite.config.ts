@@ -1,9 +1,9 @@
-import vue from '@vitejs/plugin-vue';
-import { defineConfig } from 'vite';
-import viteCompression from 'vite-plugin-compression';
-import path from 'path';
+import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+import viteCompression from 'vite-plugin-compression'
+import path from 'path'
 
-export default defineConfig((mode) => {
+export default defineConfig(mode => {
   return {
     // Project plugins
     plugins: [
@@ -21,16 +21,16 @@ export default defineConfig((mode) => {
         disable: false,
         threshold: 1025,
         algorithm: 'gzip',
-        ext: '.gz',
-      }),
+        ext: '.gz'
+      })
     ],
     // Base configuration
     base: './',
     publicDir: 'public',
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src'),
-      },
+        '@': path.resolve(__dirname, 'src')
+      }
     },
     build: {
       outDir: 'dist',
@@ -44,9 +44,9 @@ export default defineConfig((mode) => {
         compress: {
           // Remove console and debugger in production
           drop_console: false,
-          drop_debugger: true,
-        },
-      },
-    },
-  };
-});
+          drop_debugger: true
+        }
+      }
+    }
+  }
+})

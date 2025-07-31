@@ -1,6 +1,6 @@
-import path from 'path';
-import { getBaseDir } from 'ee-core/ps';
-import { type AppConfig } from 'ee-core/config';
+import path from 'path'
+import { getBaseDir } from 'ee-core/ps'
+import { type AppConfig } from 'ee-core/config'
 
 const config: () => AppConfig = () => {
   return {
@@ -14,51 +14,51 @@ const config: () => AppConfig = () => {
       minHeight: 300,
       webPreferences: {
         contextIsolation: false,
-        nodeIntegration: true,
+        nodeIntegration: true
       },
       frame: true,
       show: false,
-      icon: path.join(getBaseDir(), 'public', 'images', 'logo-32.png'),
+      icon: path.join(getBaseDir(), 'public', 'images', 'logo-32.png')
     },
     logger: {
       level: 'INFO',
       outputJSON: false,
       appLogName: 'ee.log',
       coreLogName: 'ee-core.log',
-      errorLogName: 'ee-error.log',
+      errorLogName: 'ee-error.log'
     },
     remote: {
       enable: false,
-      url: 'http://electron-egg.kaka996.com/',
+      url: 'http://electron-egg.kaka996.com/'
     },
     socketServer: {
       enable: true,
       port: 7070,
-      path: "/socket.io/",
+      path: '/socket.io/',
       connectTimeout: 45000,
       pingTimeout: 30000,
       pingInterval: 25000,
       maxHttpBufferSize: 1e8,
-      transports: ["polling", "websocket"],
+      transports: ['polling', 'websocket'],
       cors: {
-        origin: true,
+        origin: true
       },
-      channel: 'socket-channel',
+      channel: 'socket-channel'
     },
     httpServer: {
       enable: true,
       https: {
         enable: false,
         key: '/public/ssl/localhost+1.key',
-        cert: '/public/ssl/localhost+1.pem',
+        cert: '/public/ssl/localhost+1.pem'
       },
       host: '127.0.0.1',
-      port: 7071,
+      port: 7071
     },
     mainServer: {
-      indexPath: '/public/dist/index.html',
+      indexPath: '/public/dist/index.html'
     }
-  };
-};
+  }
+}
 
-export default config;
+export default config
