@@ -18,7 +18,8 @@ module.exports = {
       directory: './',
       cmd: 'electron',
       args: ['.', '--env=local'],
-      watch: false,
+      watch: true,
+      delay: 1000,
     }
   },
 
@@ -33,8 +34,7 @@ module.exports = {
       args: ['run', 'build'],
     },
     electron: {
-      type: 'javascript',
-      bundleType: 'copy'
+      type: 'typescript',
     },
     win64: {
       cmd: 'electron-builder',
@@ -157,7 +157,7 @@ module.exports = {
       confusionOptions: {
         compact: true,      
         stringArray: true,
-        stringArrayEncoding: ['rc4'],
+        stringArrayEncoding: ['none'],
         deadCodeInjection: false,
         stringArrayCallsTransform: true,
         numbersToExpressions: true,
