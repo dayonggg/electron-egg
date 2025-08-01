@@ -19,10 +19,7 @@
     "noImplicitAny": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "./electron/**/*"
-  ]
+  "include": ["./electron/**/*"]
 }
-  

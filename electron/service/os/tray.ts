@@ -16,18 +16,18 @@ class TrayService {
     icon: string
   }
 
-  constructor () {
+  constructor() {
     this.tray = null
     this.config = {
       title: 'electron-egg',
-      icon: '/public/images/tray.png'
+      icon: '/public/images/tray.png',
     }
   }
 
   /**
    * Create the tray icon
    */
-  create () {
+  create() {
     logger.info('[tray] load')
 
     const cfg = this.config
@@ -42,14 +42,14 @@ class TrayService {
         label: '显示',
         click: function () {
           mainWindow.show()
-        }
+        },
       },
       {
         label: '退出',
         click: function () {
           electronApp.quit()
-        }
-      }
+        },
+      },
     ]
 
     // Set a flag to minimize to tray instead of closing

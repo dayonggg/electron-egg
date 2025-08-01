@@ -3,10 +3,10 @@ import { logger } from 'ee-core/log'
 // effect service
 class EffectService {
   // hello
-  async hello (args: any): Promise<{ status: string; params: any }> {
+  async hello(args: any): Promise<{ status: string; params: any }> {
     let obj = {
       status: 'ok',
-      params: args
+      params: args,
     }
     logger.info('EffectService obj:', obj)
 

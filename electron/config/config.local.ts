@@ -3,11 +3,11 @@ import { type AppConfig } from 'ee-core/config'
 const config: () => AppConfig = () => {
   return {
     openDevTools: {
-      mode: 'right'
+      mode: 'right',
     },
     jobs: {
-      messageLog: false
-    }
+      messageLog: false,
+    },
   }
 }
 

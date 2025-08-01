@@ -12,25 +12,25 @@ export default defineConfig(mode => {
           compilerOptions: {
             isCustomElement: tag => {
               return tag === 'webview'
-            }
-          }
-        }
+            },
+          },
+        },
       }),
       viteCompression({
         verbose: true,
         disable: false,
         threshold: 1025,
         algorithm: 'gzip',
-        ext: '.gz'
-      })
+        ext: '.gz',
+      }),
     ],
     // Base configuration
     base: './',
     publicDir: 'public',
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src')
-      }
+        '@': path.resolve(__dirname, 'src'),
+      },
     },
     build: {
       outDir: 'dist',
@@ -44,9 +44,9 @@ export default defineConfig(mode => {
         compress: {
           // Remove console and debugger in production
           drop_console: false,
-          drop_debugger: true
-        }
-      }
-    }
+          drop_debugger: true,
+        },
+      },
+    },
   }
 })

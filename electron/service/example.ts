@@ -2,10 +2,10 @@ import { logger } from 'ee-core/log'
 
 // example service
 class ExampleService {
-  async test (args: any): Promise<{ status: string; params: any }> {
+  async test(args: any): Promise<{ status: string; params: any }> {
     let obj = {
       status: 'ok',
-      params: args
+      params: args,
     }
     logger.info('ExampleService obj:', obj)
     return obj

@@ -9,9 +9,9 @@ class EffectController {
   /**
    * select file
    */
-  selectFile (): string | null {
+  selectFile(): string | null {
     const filePaths = dialog.showOpenDialogSync({
-      properties: ['openFile']
+      properties: ['openFile'],
     })
 
     if (!filePaths) {
@@ -24,13 +24,13 @@ class EffectController {
   /**
    * login window
    */
-  loginWindow (args: { width?: number; height?: number }): void {
+  loginWindow(args: { width?: number; height?: number }): void {
     const { width, height } = args
     const win = getMainWindow()
 
     const size = {
       width: width || 400,
-      height: height || 300
+      height: height || 300,
     }
     win.setSize(size.width, size.height)
     win.setResizable(true)
@@ -42,13 +42,13 @@ class EffectController {
   /**
    * restore window
    */
-  restoreWindow (args: { width?: number; height?: number }): void {
+  restoreWindow(args: { width?: number; height?: number }): void {
     const { width, height } = args
     const win = getMainWindow()
 
     const size = {
       width: width || 980,
-      height: height || 650
+      height: height || 650,
     }
     win.setSize(size.width, size.height)
     win.setResizable(true)

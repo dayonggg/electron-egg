@@ -8,7 +8,7 @@ class FrameworkService {
   myJobPool: ChildPoolJob
   taskForJob: { [key: string]: any }
 
-  constructor () {
+  constructor() {
     // 在构造函数中初始化一些变量
     this.myTimer = 0
     this.myJob = new ChildJob()
@@ -19,10 +19,10 @@ class FrameworkService {
   /**
    * test
    */
-  async test (args: any): Promise<{ status: string; params: any }> {
+  async test(args: any): Promise<{ status: string; params: any }> {
     let obj = {
       status: 'ok',
-      params: args
+      params: args,
     }
     logger.info('FrameworkService obj:', obj)
     return obj
@@ -31,7 +31,7 @@ class FrameworkService {
   /**
    * ipc通信(双向)
    */
-  bothWayMessage (type: string, content: any, event: any): string {
+  bothWayMessage(type: string, content: any, event: any): string {
     // 前端ipc频道 channel
     const channel = 'controller/framework/ipcSendMsg'
 
@@ -62,9 +62,9 @@ class FrameworkService {
   /**
    * 执行任务
    */
-  doJob (jobId: string, action: string, event: any): any {
+  doJob(jobId: string, action: string, event: any): any {
     const res = {
-      pid: 0
+      pid: 0,
     }
     let oneTask: any
     const channel = 'controller/framework/timerJobProgress'
@@ -110,7 +110,7 @@ class FrameworkService {
   /**
    * 创建pool
    */
-  doCreatePool (num: number, event: any): void {
+  doCreatePool(num: number, event: any): void {
     const channel = 'controller/framework/createPoolNotice'
     this.myJobPool.create(num).then((pids: any[]) => {
       event.reply(`${channel}`, pids)
@@ -120,9 +120,9 @@ class FrameworkService {
   /**
    * 通过进程池执行任务
    */
-  doJobByPool (jobId: string, action: string, event: any): any {
+  doJobByPool(jobId: string, action: string, event: any): any {
     let res = {
-      pid: 0
+      pid: 0,
     }
     const channel = 'controller/framework/timerJobProgress'
     if (action == 'run') {
@@ -152,7 +152,7 @@ class FrameworkService {
   /**
    * 获取正在运行的 job 进程
    */
-  monitorJob (): void {
+  monitorJob(): void {
     setInterval(() => {
       let jobPids = this.myJob.getPids()
       let jobPoolPids = this.myJobPool.getPids()

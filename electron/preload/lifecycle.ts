@@ -7,14 +7,14 @@ class Lifecycle {
   /**
    * Core app has been loaded
    */
-  async ready (): Promise<void> {
+  async ready(): Promise<void> {
     logger.info('[lifecycle] ready')
   }
 
   /**
    * Electron app is ready
    */
-  async electronAppReady (): Promise<void> {
+  async electronAppReady(): Promise<void> {
     logger.info('[lifecycle] electron-app-ready')
 
     // When double clicking the icon, display the opened window
@@ -31,7 +31,7 @@ class Lifecycle {
   /**
    * Main window has been loaded
    */
-  async windowReady (): Promise<void> {
+  async windowReady(): Promise<void> {
     logger.info('[lifecycle] window-ready')
 
     const win = getMainWindow()
@@ -61,7 +61,7 @@ class Lifecycle {
   /**
    * Before app close
    */
-  async beforeClose (): Promise<void> {
+  async beforeClose(): Promise<void> {
     logger.info('[lifecycle] before-close')
   }
 }

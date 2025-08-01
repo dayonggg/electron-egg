@@ -10,7 +10,7 @@ import { cross } from 'ee-core/cross'
  * @class
  */
 class CrossService {
-  info (): string {
+  info(): string {
     const pids = cross.getPids()
     logger.info('cross pids:', pids)
 
@@ -25,12 +25,12 @@ class CrossService {
     return 'hello electron-egg'
   }
 
-  getUrl (name: string): string {
+  getUrl(name: string): string {
     const serverUrl = cross.getUrl(name)
     return serverUrl
   }
 
-  killServer (type: string, name: string): void {
+  killServer(type: string, name: string): void {
     if (type == 'all') {
       cross.killAll()
     } else {
@@ -43,7 +43,7 @@ class CrossService {
    * In the default configuration, services can be started with applications.
    * Developers can turn off the configuration and create it manually.
    */
-  async createGoServer (): Promise<void> {
+  async createGoServer(): Promise<void> {
     // method 1: Use the default Settings
     //const entity = await cross.run(serviceName);
 
@@ -54,7 +54,7 @@ class CrossService {
       cmd: path.join(getExtraResourcesDir(), 'goapp'),
       directory: getExtraResourcesDir(),
       args: ['--port=7073'],
-      appExit: true
+      appExit: true,
     }
     const entity = await cross.run(serviceName, opt)
     logger.info('server name:', entity.name)
@@ -65,7 +65,7 @@ class CrossService {
   /**
    * create java server
    */
-  async createJavaServer (): Promise<void> {
+  async createJavaServer(): Promise<void> {
     const serviceName = 'java'
     const jarPath = path.join(getExtraResourcesDir(), 'java-app.jar')
     const opt = {
@@ -81,9 +81,9 @@ class CrossService {
         '-Dspring.profiles.active=prod',
         `-Dserver.port=18080`,
         `-Dlogging.file.path=${getLogDir()}`,
-        `${jarPath}`
+        `${jarPath}`,
       ],
-      appExit: false
+      appExit: false,
     }
     if (is.macOS()) {
       // Setup Java program
@@ -104,7 +104,7 @@ class CrossService {
    * In the default configuration, services can be started with applications.
    * Developers can turn off the configuration and create it manually.
    */
-  async createPythonServer (): Promise<void> {
+  async createPythonServer(): Promise<void> {
     // method 1: Use the default Settings
     //const entity = await cross.run(serviceName);
 
@@ -116,7 +116,7 @@ class CrossService {
       directory: path.join(getExtraResourcesDir(), 'py'),
       args: ['--port=7074'],
       windowsExtname: true,
-      appExit: true
+      appExit: true,
     }
     const entity = await cross.run(serviceName, opt)
     logger.info('server name:', entity.name)
@@ -124,7 +124,7 @@ class CrossService {
     logger.info('server url:', entity.getUrl())
   }
 
-  async requestApi (name: string, urlPath: string, params: any): Promise<any> {
+  async requestApi(name: string, urlPath: string, params: any): Promise<any> {
     const serverUrl = cross.getUrl(name)
     const apiHello = serverUrl + urlPath
     console.log('Server Url:', serverUrl)
@@ -134,7 +134,7 @@ class CrossService {
       url: apiHello,
       timeout: 1000,
       params,
-      proxy: false
+      proxy: false,
     })
     if (response.status == 200) {
       const { data } = response

@@ -17,12 +17,12 @@ class OsController {
   /**
    * Message prompt dialog box
    */
-  messageShow (): string {
+  messageShow(): string {
     dialog.showMessageBoxSync({
       type: 'info', // "none", "info", "error", "question" 或者 "warning"
       title: 'Custom Title',
       message: 'Customize message content',
-      detail: 'Other additional information'
+      detail: 'Other additional information',
     })
 
     return 'Opened the message box'
@@ -31,7 +31,7 @@ class OsController {
   /**
    * Message prompt and confirmation dialog box
    */
-  messageShowConfirm (): string {
+  messageShowConfirm(): string {
     const res = dialog.showMessageBoxSync({
       type: 'info',
       title: 'Custom Title',
@@ -39,7 +39,7 @@ class OsController {
       detail: 'Other additional information',
       cancelId: 1, // Index of buttons used to cancel dialog boxes
       defaultId: 0, // Set default selected button
-      buttons: ['confirm', 'cancel']
+      buttons: ['confirm', 'cancel'],
     })
     let data = res === 0 ? 'click the confirm button' : 'click the cancel button'
 
@@ -49,9 +49,9 @@ class OsController {
   /**
    * Select Directory
    */
-  selectFolder () {
+  selectFolder() {
     const filePaths = dialog.showOpenDialogSync({
-      properties: ['openDirectory', 'createDirectory']
+      properties: ['openDirectory', 'createDirectory'],
     })
 
     if (!filePaths) {
@@ -64,7 +64,7 @@ class OsController {
   /**
    * open directory
    */
-  openDirectory (args: { id: any }): boolean {
+  openDirectory(args: { id: any }): boolean {
     const { id } = args
     if (!id) {
       return false
@@ -83,11 +83,11 @@ class OsController {
   /**
    * Select Picture
    */
-  selectPic (): string | null {
+  selectPic(): string | null {
     const filePaths = dialog.showOpenDialogSync({
       title: 'select pic',
       properties: ['openFile'],
-      filters: [{ name: 'Images', extensions: ['jpg', 'png', 'gif'] }]
+      filters: [{ name: 'Images', extensions: ['jpg', 'png', 'gif'] }],
     })
     if (!filePaths) {
       return null
@@ -106,7 +106,7 @@ class OsController {
   /**
    * Open a new window
    */
-  createWindow (args: any): any {
+  createWindow(args: any): any {
     const wcid = windowService.createWindow(args)
     return wcid
   }
@@ -114,7 +114,7 @@ class OsController {
   /**
    * Get Window contents id
    */
-  getWCid (args: any): any {
+  getWCid(args: any): any {
     const wcid = windowService.getWCid(args)
     return wcid
   }
@@ -122,7 +122,7 @@ class OsController {
   /**
    * Realize communication between two windows through the transfer of the main process
    */
-  window1ToWindow2 (args: any): void {
+  window1ToWindow2(args: any): void {
     windowService.communicate(args)
     return
   }
@@ -130,7 +130,7 @@ class OsController {
   /**
    * Realize communication between two windows through the transfer of the main process
    */
-  window2ToWindow1 (args: any): void {
+  window2ToWindow1(args: any): void {
     windowService.communicate(args)
     return
   }
@@ -138,7 +138,7 @@ class OsController {
   /**
    * Create system notifications
    */
-  sendNotification (args: { title?: string; subtitle?: string; body?: string; silent?: boolean }, event: any): boolean {
+  sendNotification(args: { title?: string; subtitle?: string; body?: string; silent?: boolean }, event: any): boolean {
     const { title, subtitle, body, silent } = args
 
     const options: any = {}

@@ -24,7 +24,7 @@ class FrameworkController {
    * 调用其它程序（exe、bash等可执行程序）
    *
    */
-  openSoftware (args: { softName: string }): boolean {
+  openSoftware(args: { softName: string }): boolean {
     const { softName } = args
     const softwarePath = path.join(getExtraResourcesDir(), softName)
     logger.info('[openSoftware] softwarePath:', softwarePath)
@@ -46,7 +46,7 @@ class FrameworkController {
   /**
    * 检测http服务是否开启
    */
-  async checkHttpServer (): Promise<{ enable: boolean; server: string }> {
+  async checkHttpServer(): Promise<{ enable: boolean; server: string }> {
     const httpConfig = getConfig().httpServer
     if (
       !httpConfig ||
@@ -62,7 +62,7 @@ class FrameworkController {
     console.log('[checkHttpServer] url:', url)
     const data = {
       enable: enable,
-      server: url
+      server: url,
     }
     return data
   }
@@ -72,12 +72,12 @@ class FrameworkController {
    * args 是 前端传的参数
    * ctx 是 koa 的 ctx 对象
    */
-  async doHttpRequest (args: any, ctx: any): Promise<boolean> {
+  async doHttpRequest(args: any, ctx: any): Promise<boolean> {
     const httpInfo = {
       args,
       method: ctx.request.method,
       query: ctx.request.query,
-      body: ctx.request.body
+      body: ctx.request.body,
     }
     logger.info('httpInfo:', httpInfo)
 
@@ -94,7 +94,7 @@ class FrameworkController {
   /**
    * 一个socket io请求访问此方法
    */
-  async doSocketRequest (args: any): Promise<boolean> {
+  async doSocketRequest(args: any): Promise<boolean> {
     const { id } = args
     if (!id) {
       return false
@@ -108,7 +108,7 @@ class FrameworkController {
   /**
    * 异步消息类型
    */
-  async ipcInvokeMsg (args: string): Promise<string> {
+  async ipcInvokeMsg(args: string): Promise<string> {
     let timeNow = dayjs().format('YYYY-MM-DD HH:mm:ss')
     const data = args + ' - ' + timeNow
 
@@ -118,7 +118,7 @@ class FrameworkController {
   /**
    * 同步消息类型
    */
-  async ipcSendSyncMsg (args: string): Promise<string> {
+  async ipcSendSyncMsg(args: string): Promise<string> {
     let timeNow = dayjs().format('YYYY-MM-DD HH:mm:ss')
     const data = args + ' - ' + timeNow
 
@@ -128,7 +128,7 @@ class FrameworkController {
   /**
    * 双向异步通信
    */
-  ipcSendMsg (args: { type: string; content: any }, event: any): any {
+  ipcSendMsg(args: { type: string; content: any }, event: any): any {
     const { type, content } = args
     const data = frameworkService.bothWayMessage(type, content, event)
 
@@ -138,7 +138,7 @@ class FrameworkController {
   /**
    * 任务
    */
-  someJob (args: { jobId: string; action: string }, event: any): any {
+  someJob(args: { jobId: string; action: string }, event: any): any {
     const { jobId, action } = args
     let result = null as any
 
@@ -161,7 +161,7 @@ class FrameworkController {
     let data = {
       jobId,
       action,
-      result
+      result,
     }
     return data
   }
@@ -169,7 +169,7 @@ class FrameworkController {
   /**
    * 创建任务池
    */
-  async createPool (args: { number: number }, event: any): Promise<void> {
+  async createPool(args: { number: number }, event: any): Promise<void> {
     let num = args.number
     frameworkService.doCreatePool(num, event)
 
@@ -182,7 +182,7 @@ class FrameworkController {
   /**
    * 通过进程池执行任务
    */
-  someJobByPool (args: { jobId: string; action: string }, event: any): any {
+  someJobByPool(args: { jobId: string; action: string }, event: any): any {
     const { jobId, action } = args
     let result = null as any
     switch (action) {
@@ -195,7 +195,7 @@ class FrameworkController {
     let data = {
       jobId,
       action,
-      result
+      result,
     }
     return data
   }
@@ -203,7 +203,7 @@ class FrameworkController {
   /**
    * 检查是否有新版本
    */
-  checkForUpdater () {
+  checkForUpdater() {
     autoUpdaterService.checkUpdate()
     return
   }
@@ -211,7 +211,7 @@ class FrameworkController {
   /**
    * 下载新版本
    */
-  downloadApp () {
+  downloadApp() {
     autoUpdaterService.download()
     return
   }
@@ -219,7 +219,7 @@ class FrameworkController {
   /**
    * 测试接口
    */
-  hello (args: any): void {
+  hello(args: any): void {
     logger.info('hello ', args)
   }
 }
