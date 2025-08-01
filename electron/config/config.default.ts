@@ -23,9 +23,9 @@ const config: () => AppConfig = () => {
     logger: {
       level: 'INFO',
       outputJSON: false,
-      appLogName: 'ee.log',
-      coreLogName: 'ee-core.log',
-      errorLogName: 'ee-error.log',
+      appLogName: 'app.log',
+      coreLogName: 'core.log',
+      errorLogName: 'error.log',
     },
     remote: {
       enable: false,
@@ -47,11 +47,6 @@ const config: () => AppConfig = () => {
     },
     httpServer: {
       enable: true,
-      https: {
-        enable: false,
-        key: '/public/ssl/localhost+1.key',
-        cert: '/public/ssl/localhost+1.pem',
-      },
       host: '127.0.0.1',
       port: 7071,
     },

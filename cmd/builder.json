@@ -1,6 +1,6 @@
 {
-  "productName": "Next",
-  "appId": "com.next",
+  "productName": "AICourseBuilderNext",
+  "appId": "com.ai-course-builder-next",
   "copyright": "© 2025 ihuman.",
   "directories": {
     "output": "release/${version}"
@@ -21,6 +21,12 @@
     "from": "build/extraResources/",
     "to": "extraResources"
   },
+  "publish": [
+    {
+      "provider": "generic",
+      "url": ""
+    }
+  ],
   "nsis": {
     "oneClick": false,
     "allowElevation": true,
