@@ -4,9 +4,6 @@
  * Definition of communication channels between main process and rendering process
  */
 const ipcApiRoute = {
-  example: {
-    test: 'controller/example/test',
-  },
   framework: {
     checkForUpdater: 'controller/framework/checkForUpdater',
     downloadApp: 'controller/framework/downloadApp',
