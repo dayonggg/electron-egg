@@ -66,26 +66,6 @@ module.exports = {
     frontend_dist: {
       src: './frontend/dist',
       dest: './public/dist'
-    },
-    go_static: {
-      src: './frontend/dist',
-      dest: './go/public/dist'
-    },
-    go_config: {
-      src: './go/config',
-      dest: './go/public/config'
-    },
-    go_package: {
-      src: './package.json',
-      dest: './go/public/package.json'
-    },
-    go_images: {
-      src: './public/images',
-      dest: './go/public/images'
-    },
-    python_dist: {
-      src: './python/dist',
-      dest: './build/extraResources/py'
     }
   },
 

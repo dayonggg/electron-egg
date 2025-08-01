@@ -16,9 +16,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Build",
+      "name": "Build Win64",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "build"],
+      "runtimeArgs": ["run", "build-w"],
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     }

@@ -1,5 +1,5 @@
 node_modules
-out/
+release/
 logs/
 runtime/
 package-lock.json

@@ -1,9 +1,9 @@
 {
-  "productName": "ee",
-  "appId": "com.electron.ee",
-  "copyright": "© 2025 duola Technology Co., Ltd.",
+  "productName": "Next",
+  "appId": "com.next",
+  "copyright": "© 2025 ihuman.",
   "directories": {
-    "output": "out"
+    "output": "release/${version}"
   },
   "asar": true,
   "files": [
@@ -13,7 +13,7 @@
     "!electron/",
     "!frontend/",
     "!logs/",
-    "!out/",
+    "!release/",
     "!go/",
     "!python/"
   ],
@@ -30,14 +30,8 @@
     "installerHeaderIcon": "build/icons/icon.ico",
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
-    "shortcutName": "ee"
+    "shortcutName": "Next"
   },
-  "publish": [
-    {
-      "provider": "generic",
-      "url": "https://localhost/next"
-    }
-  ],
   "win": {
     "icon": "build/icons/icon.ico",
     "artifactName": "${productName}-${os}-${version}-${arch}.${ext}",
