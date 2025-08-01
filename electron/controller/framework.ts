@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import path from 'path'
-import fs from 'fs'
+import fse from 'fs-extra'
 import { exec } from 'child_process'
 import { app as electronApp, shell } from 'electron'
 import { getExtraResourcesDir } from 'ee-core/ps'
@@ -30,7 +30,7 @@ class FrameworkController {
     logger.info('[openSoftware] softwarePath:', softwarePath)
 
     // 检查程序是否存在
-    if (!fs.existsSync(softwarePath)) {
+    if (!fse.existsSync(softwarePath)) {
       return false
     }
     // 命令行字符串 并 执行, start 命令后面的路径要加双引号

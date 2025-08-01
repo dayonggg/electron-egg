@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fse from 'fs-extra'
 import path from 'path'
 import { app as electronApp, dialog, shell } from 'electron'
 import { windowService } from '../service/os/window'
@@ -81,29 +81,6 @@ class OsController {
   }
 
   /**
-   * Select Picture
-   */
-  selectPic(): string | null {
-    const filePaths = dialog.showOpenDialogSync({
-      title: 'select pic',
-      properties: ['openFile'],
-      filters: [{ name: 'Images', extensions: ['jpg', 'png', 'gif'] }],
-    })
-    if (!filePaths) {
-      return null
-    }
-
-    try {
-      const data = fs.readFileSync(filePaths[0])
-      const pic = 'data:image/jpeg;base64,' + data.toString('base64')
-      return pic
-    } catch (err) {
-      console.error(err)
-      return null
-    }
-  }
-
-  /**
    * Open a new window
    */
   createWindow(args: any): any {
@@ -117,22 +94,6 @@ class OsController {
   getWCid(args: any): any {
     const wcid = windowService.getWCid(args)
     return wcid
-  }
-
-  /**
-   * Realize communication between two windows through the transfer of the main process
-   */
-  window1ToWindow2(args: any): void {
-    windowService.communicate(args)
-    return
-  }
-
-  /**
-   * Realize communication between two windows through the transfer of the main process
-   */
-  window2ToWindow1(args: any): void {
-    windowService.communicate(args)
-    return
   }
 
   /**
