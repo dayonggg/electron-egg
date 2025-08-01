@@ -1,14 +1,10 @@
 <template>
-  <div>is work.</div>
+  <div>
+    <ElButton>Test</ElButton>
+  </div>
 </template>
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { ElButton } from 'element-plus'
 
-onMounted(() => {
-  const loadingElement = document.getElementById('loadingPage')
-  if (loadingElement) {
-    (loadingElement as HTMLElement).remove()
-  }
-})
 </script>
 <style></style>
