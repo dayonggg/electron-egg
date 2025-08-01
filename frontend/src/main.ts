@@ -7,6 +7,7 @@ import 'element-plus/dist/index.css'
 import ClickOutside from 'element-plus/es/directives/click-outside/index'
 
 // Style
+import '@/assets/element-plus-extra.scss'
 import '@/assets/global.scss'
 
 // Fonts

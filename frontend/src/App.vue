@@ -1,6 +1,7 @@
 <template>
   <div>
     <ElButton>Test</ElButton>
+    <div>123</div>
   </div>
 </template>
 <script setup lang="ts">
