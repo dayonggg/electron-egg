@@ -5,28 +5,28 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "explorer.openEditors.visible": 1,
   "editor.tabSize": 2,
-  "editor.defaultFormatter": "numso.prettier-standard-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "diffEditor.ignoreTrimWhitespace": true,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "prettier.requireConfig": true,
   "workbench.sideBar.location": "left",
   "[typescript]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[scss]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json5]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -41,12 +41,6 @@
     "editor.defaultFormatter": "Vue.volar"
   },
   "typescript.tsc.autoDetect": "off",
-  "json.schemas": [
-    {
-      "fileMatch": ["/*electron-builder.json5", "/*electron-builder.json"],
-      "url": "https://json.schemastore.org/electron-builder"
-    }
-  ],
   "files.exclude": {
     "**/dist": true,
     "**/dist-electron": true,

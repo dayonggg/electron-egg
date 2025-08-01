@@ -2,6 +2,9 @@ import { ElectronEgg } from 'ee-core'
 import { Lifecycle } from './preload/lifecycle'
 import { preload } from './preload'
 
+// Remove electron security warnings
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
+
 // New app
 const app = new ElectronEgg()
 
