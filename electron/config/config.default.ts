@@ -7,7 +7,7 @@ const config: () => AppConfig = () => {
     openDevTools: false,
     singleLock: true,
     windowsOption: {
-      title: 'electron-egg',
+      title: 'next',
       width: 980,
       height: 650,
       minWidth: 400,
@@ -29,7 +29,7 @@ const config: () => AppConfig = () => {
     },
     remote: {
       enable: false,
-      url: 'http://electron-egg.kaka996.com/'
+      url: 'http://localhost/'
     },
     socketServer: {
       enable: true,

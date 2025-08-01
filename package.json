@@ -20,7 +20,6 @@
     "debug-electron": "cross-env DEBUG=ee-* ee-bin dev --serve=electron",
     "debug-move": "ee-bin move --flag=frontend_dist"
   },
-  "repository": "https://github.com/dromara/electron-egg.git",
   "keywords": [],
   "author": "",
   "license": "Apache",

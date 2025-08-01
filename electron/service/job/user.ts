@@ -1,19 +1,18 @@
-import { logger } from 'ee-core/log';
+import { logger } from 'ee-core/log'
 
 /**
  * UserService class
  */
 class UserService {
-
-  async hello(args: any): Promise<{ status: string; params: any }> {
+  async hello (args: any): Promise<{ status: string; params: any }> {
     const obj = {
       status: 'ok',
-      params: args,
-    };
-    logger.info('UserService obj:', obj);
-    return obj;
+      params: args
+    }
+    logger.info('UserService obj:', obj)
+    return obj
   }
 }
-UserService.toString = () => '[class UserService]';
+UserService.toString = () => '[class UserService]'
 
-export { UserService };
+export { UserService }

@@ -35,7 +35,7 @@
   "publish": [
     {
       "provider": "generic",
-      "url": "https://github.com/wallace5303/electron-egg"
+      "url": "https://localhost/next"
     }
   ],
   "win": {

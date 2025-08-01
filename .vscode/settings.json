@@ -54,5 +54,6 @@
     "**/release": true,
     "**/package-lock.json": true,
     "**/LICENSE": true
-  }
+  },
+  "files.eol": "\r\n"
 }

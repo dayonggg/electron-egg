@@ -1,23 +1,19 @@
-import { logger } from 'ee-core/log';
+import { logger } from 'ee-core/log'
 
 // effect service
 class EffectService {
-
   // hello
-  async hello(args: any): Promise<{ status: string; params: any }> {
+  async hello (args: any): Promise<{ status: string; params: any }> {
     let obj = {
-      status:'ok',
+      status: 'ok',
       params: args
     }
-    logger.info('EffectService obj:', obj);
+    logger.info('EffectService obj:', obj)
 
-    return obj;
+    return obj
   }
 }
-EffectService.toString = () => '[class EffectService]';
-const effectService = new EffectService();
+EffectService.toString = () => '[class EffectService]'
+const effectService = new EffectService()
 
-export {
-  EffectService,
-  effectService
-}
+export { EffectService, effectService }
